@@ -1,2 +1,0 @@
-aq ficara os arquivos de execuçao (os comandos)
-arquivos q inicia o aplicativo q chama no terminal 

@@ -1,19 +1,17 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
-import chalk from 'chalk';
-
-import ls from './services/FileDirListServices.mjs';
-import lsT from './services/AllListScannerServices.mjs';
-import copy from './services/CopyServices.mjs';
+import process from 'process';
 
 // Definir caminhos globais
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const __rootDirectory = path.dirname(__dirname);
+const currentDir = process.cwd();
 
-(async () => {
-    console.log(`Directory: ` + chalk.blue(path.basename(__rootDirectory)));
-    console.log(`Directory path: ` + chalk.blue(__rootDirectory));
-})();
+async function init(){
+    console.log(`Current working directory: ${currentDir}`);
+    console.log(`Current directory name: ${path.basename(currentDir)}`);
+};
 
-export default __rootDirectory
+export {init, currentDir}
+
